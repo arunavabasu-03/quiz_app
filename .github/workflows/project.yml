@@ -23,7 +23,7 @@ jobs:
     - name: bug to card
       uses: srggrs/assign-one-project-github-action@1.2.1
       if: |  
-          contains(github.event.issue.labels.*.name,'bug') ||
+          contains(github.event.issue.labels.*.name,'bug') 
 #          contains(github.event.pull_request.labels.*.name, 'bug')
 
         
@@ -34,7 +34,7 @@ jobs:
     - name: feature to card
       uses: srggrs/assign-one-project-github-action@1.2.1
       if: |
-        contains(github.event.issue.labels.*.name, 'feature') ||
+        contains(github.event.issue.labels.*.name, 'feature') 
 #        contains(github.event.pull_request.labels.*.name, 'feature')
       with:
         project: 'https://github.com/arunavabasu-03/quiz_app/projects/1'
@@ -43,7 +43,7 @@ jobs:
     - name: enhancement to card
       uses: srggrs/assign-one-project-github-action@1.2.1
       if: |
-        contains(github.event.issue.labels.*.name, 'enhancement') ||
+        contains(github.event.issue.labels.*.name, 'enhancement') 
 #        contains(github.event.pull_request.labels.*.name, 'enhancement')
       with:
         project: 'https://github.com/arunavabasu-03/quiz_app/projects/1'
