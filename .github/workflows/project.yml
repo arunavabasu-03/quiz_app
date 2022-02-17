@@ -17,24 +17,25 @@ jobs:
       uses: srggrs/assign-one-project-github-action@1.2.1
       if: github.event.action == 'opened'
       with:
-        project: 'https://github.com/arunavabasu-03/github_actions/projects/2'
+        project: 'https://github.com/arunavabasu-03/quiz_app/projects/1'
         column_name: 'Pull Request'
 # for bug ------------------------- for bug
     - name: bug to card
       uses: srggrs/assign-one-project-github-action@1.2.1
-      if: |
-           contains(github.event.issue.labels.*.name, 'bug') 
+      if: |  
+          contains(github.event.issue.labels.*.name,'bug') ||
+#          contains(github.event.pull_request.labels.*.name, 'bug')
 
         
       with:
         project: 'https://github.com/arunavabasu-03/quiz_app/projects/1'
-        column_name: 'Bug'
+        column_name: 'bug'
 # for feature ------------------------- for feature
     - name: feature to card
       uses: srggrs/assign-one-project-github-action@1.2.1
       if: |
         contains(github.event.issue.labels.*.name, 'feature') ||
-        contains(github.event.pull_request.labels.*.name, 'feature')
+#        contains(github.event.pull_request.labels.*.name, 'feature')
       with:
         project: 'https://github.com/arunavabasu-03/quiz_app/projects/1'
         column_name: 'feature'
@@ -43,7 +44,7 @@ jobs:
       uses: srggrs/assign-one-project-github-action@1.2.1
       if: |
         contains(github.event.issue.labels.*.name, 'enhancement') ||
-        contains(github.event.pull_request.labels.*.name, 'enhancement')
+#        contains(github.event.pull_request.labels.*.name, 'enhancement')
       with:
         project: 'https://github.com/arunavabasu-03/quiz_app/projects/1'
         column_name: 'enhancement'
